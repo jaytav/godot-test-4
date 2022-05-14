@@ -7,4 +7,4 @@
 [node name="Characters" type="YSort" parent="."]
 
 [node name="Character" parent="Characters" instance=ExtResource( 1 )]
-position = Vector2( 430, 657 )
+position = Vector2( 310, 320 )

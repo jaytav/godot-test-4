@@ -10,6 +10,8 @@ func run() -> void:
 
 
 func start_next_turn() -> void:
+    yield(get_tree().create_timer(0.5), "timeout")
+    
     active_character = characters.pop_front()
     active_character.connect("turn_ended", self, "_on_active_character_turn_ended")
     active_character.start_turn()
