@@ -46,6 +46,7 @@ config/icon="res://icon.png"
 
 NodeController="*res://src/autoload/NodeController.gd"
 TurnController="*res://src/autoload/TurnController.gd"
+ActionController="*res://src/autoload/ActionController.gd"
 
 [display]
 
