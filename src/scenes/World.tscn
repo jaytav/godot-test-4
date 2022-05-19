@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/character/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/action.png" type="Texture" id=3]
+[ext_resource path="res://src/character/enemies/EndTurnEnemy.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
 1/name = "floor.png 1"
@@ -76,3 +77,6 @@ __meta__ = {
 
 [node name="Player" parent="Characters" instance=ExtResource( 1 )]
 position = Vector2( 320, 256 )
+
+[node name="EndTurnEnemy" parent="Characters" instance=ExtResource( 4 )]
+position = Vector2( 512, 224 )

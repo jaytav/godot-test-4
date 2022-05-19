@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "State",
+"class": "Action",
+"language": "GDScript",
+"path": "res://src/character/action/Action.gd"
+}, {
+"base": "State",
 "class": "Active",
 "language": "GDScript",
 "path": "res://src/character/states/Active.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://src/state_machine/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"Action": "",
 "Active": "",
 "Character": "",
 "Stat": "",
