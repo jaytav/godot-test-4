@@ -16,6 +16,8 @@ func start_next_turn() -> void:
     active_character.connect("turn_ended", self, "_on_active_character_turn_ended")
     active_character.start_turn()
 
+    CameraController.follow(active_character)
+
 
 func _on_active_character_turn_ended(character: Character) -> void:
     character.disconnect("turn_ended", self, "_on_active_character_turn_ended")
