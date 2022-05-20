@@ -5,7 +5,7 @@
 [ext_resource path="res://src/character/states/Idle.gd" type="Script" id=3]
 [ext_resource path="res://src/character/states/Active.gd" type="Script" id=4]
 [ext_resource path="res://assets/textures/character.png" type="Texture" id=5]
-[ext_resource path="res://src/state_machine/State.gd" type="Script" id=6]
+[ext_resource path="res://src/character/action/Move.gd" type="Script" id=6]
 [ext_resource path="res://src/character/stats/BoundStat.gd" type="Script" id=7]
 [ext_resource path="res://src/character/action/EndTurn.gd" type="Script" id=8]
 
@@ -16,6 +16,7 @@ script = ExtResource( 1 )
 
 [node name="ActionPoints" type="Node" parent="Stats"]
 script = ExtResource( 7 )
+max_value = 3
 
 [node name="States" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -33,6 +34,7 @@ initial_state = NodePath("Move")
 
 [node name="Move" type="Node" parent="Actions"]
 script = ExtResource( 6 )
+modulate = Color( 0.847059, 1, 0.694118, 1 )
 
 [node name="EndTurn" type="Node" parent="Actions"]
 script = ExtResource( 8 )

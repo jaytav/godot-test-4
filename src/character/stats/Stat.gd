@@ -3,14 +3,14 @@ extends Node
 
 signal updated(stat, from_value, to_value)
 
-export var _initial_value: int
+export var initial_value: int
 export var modulate: Color
 
 var value: int setget _set_value
 
 
 func _ready() -> void:
-    value = _initial_value
+    value = initial_value
 
 
 func _set_value(to_value: int) -> void:
