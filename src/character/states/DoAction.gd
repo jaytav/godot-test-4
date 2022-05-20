@@ -1,12 +1,9 @@
 extends Active
 
-export var action: NodePath
+export var action_path: NodePath
+
+onready var action: Action = get_node(action_path)
 
 
 func enter() -> void:
-    var actions: StateMachine = owner.get_node("Actions")
-    
-    if action:
-        actions.transition_to_state(get_node(action).name)
-
-    actions.active_state.do()
+    owner.do_action(action.name)
