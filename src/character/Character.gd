@@ -9,10 +9,10 @@ onready var actions: StateMachine = $Actions
 
 func start_turn() -> void:
     emit_signal("turn_started", self)
-    
+
 
 func end_turn() -> void:
-    emit_signal("turn_ended", self)    
+    emit_signal("turn_ended", self)
 
 
 func do_action(action_name: String, cell: Vector2 = Vector2.ZERO) -> void:
