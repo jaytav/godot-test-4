@@ -3,12 +3,14 @@ extends Node
 const NEGATIVE_VECTOR_POINT_INDEX_BUFFER = 999999
 
 var tile_map_action: TileMap
+var tile_map_action_secondary: TileMap
 var tile_map_floor: TileMap
 var astar_movement: AStar2D = AStar2D.new()
 
 
 func run() -> void:
     tile_map_action = NodeController.get("TileMaps").get_node("Action")
+    tile_map_action_secondary = NodeController.get("TileMaps").get_node("ActionSecondary")
     tile_map_floor = NodeController.get("TileMaps").get_node("Floor")
     refresh_astar_movement()
 

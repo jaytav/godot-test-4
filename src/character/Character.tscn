@@ -36,7 +36,8 @@ initial_state = NodePath("Move")
 
 [node name="Move" type="Node" parent="Actions"]
 script = ExtResource( 6 )
-modulate = Color( 0.847059, 1, 0.694118, 1 )
+tile_map_modulate = Color( 0.87451, 1, 0.627451, 1 )
+tile_map_secondary_modulate = Color( 0.478431, 0.670588, 0.407843, 1 )
 
 [node name="EndTurn" type="Node" parent="Actions"]
 script = ExtResource( 8 )

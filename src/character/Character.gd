@@ -33,9 +33,11 @@ func do_action(action_name: String, cell: Vector2 = Vector2.ZERO) -> void:
     actions.active_state.do(cell)
 
     ActionController.refresh_astar_movement()
+    ActionController.tile_map_action_secondary.clear()
     action.character_action_points.value -= action_cost
     action.refresh_cells()
     action.visualize_cells()
+    action.visualize_do(cell)
 
     # transition back to default action
     actions.transition_to_state(actions.initial_state)
