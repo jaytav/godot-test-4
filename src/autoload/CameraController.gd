@@ -14,4 +14,12 @@ func _process(delta: float) -> void:
 
 
 func follow(node: Node2D) -> void:
+    if follow_node:
+        follow_node.disconnect("tree_exiting", self, "_on_follow_node_tree_exiting")
+
     follow_node = node
+    follow_node.connect("tree_exiting", self, "_on_follow_node_tree_exiting")
+
+
+func _on_follow_node_tree_exiting() -> void:
+    follow_node = null

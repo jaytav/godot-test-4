@@ -35,6 +35,7 @@ func refresh_cells() -> void:
 
 func visualize_do(cell: Vector2) -> void:
     if !cells.has(cell):
+        ActionController.tile_map_action_secondary.clear()
         return
 
     var character_cell: Vector2 = ActionController.tile_map_action.world_to_map(owner.position)

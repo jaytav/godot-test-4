@@ -3,6 +3,7 @@ extends State
 
 export var tile_map_modulate: Color
 export var tile_map_secondary_modulate: Color
+export var cost: int
 
 var cells: Array
 
@@ -14,7 +15,7 @@ func do(cell: Vector2) -> void:
 
 
 func cost(cell: Vector2) -> int:
-    return 0
+    return cost
 
 
 func refresh_cells() -> void:

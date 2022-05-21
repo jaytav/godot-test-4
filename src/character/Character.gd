@@ -3,6 +3,7 @@ extends Node2D
 
 signal turn_started(character)
 signal turn_ended(character)
+signal action_done(character, action)
 
 onready var actions: StateMachine = $Actions
 
@@ -31,9 +32,11 @@ func do_action(action_name: String, cell: Vector2 = Vector2.ZERO) -> void:
 
     actions.transition_to_state(action_name)
     actions.active_state.do(cell)
+    emit_signal("action_done", self, actions.active_state)
 
     ActionController.refresh_astar_movement()
     ActionController.tile_map_action_secondary.clear()
+
     action.character_action_points.value -= action_cost
     action.refresh_cells()
     action.visualize_cells()

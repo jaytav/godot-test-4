@@ -1,7 +1,7 @@
 class_name Stat
 extends Node
 
-signal updated(stat, from_value, to_value)
+signal updated(from_value, to_value)
 
 export var initial_value: int
 export var modulate: Color
@@ -14,7 +14,11 @@ func _ready() -> void:
 
 
 func _set_value(to_value: int) -> void:
+    # only change value if it is different
+    if value == to_value:
+        return
+
     var from_value: int = value
     value = to_value
 
-    emit_signal("updated", self, from_value, value)
+    emit_signal("updated", from_value, value)
