@@ -16,31 +16,35 @@ func end_turn() -> void:
     emit_signal("turn_ended", self)
 
 
-func do_action(action_name: String, cell: Vector2 = Vector2.ZERO) -> void:
+func do_action(action_name: String, context: Dictionary = {}) -> void:
     var action: Action = actions.get_node(action_name)
 
     if action == null:
         return
 
-    if !action.cells.empty() and !action.cells.has(cell):
+    if !action.cells.empty() and !action.cells.has(context.cell):
         return
 
-    var action_cost = action.cost(cell)
+    var action_cost = action.cost(context)
 
     if action_cost > action.character_action_points.value:
         return
 
     actions.transition_to_state(action_name)
-    actions.active_state.do(cell)
+    actions.active_state.do(context)
+    action.character_action_points.value -= action_cost
     emit_signal("action_done", self, actions.active_state)
 
-    ActionController.refresh_astar_movement()
+    ActionController.tile_map_action.clear()
     ActionController.tile_map_action_secondary.clear()
-
-    action.character_action_points.value -= action_cost
-    action.refresh_cells()
-    action.visualize_cells()
-    action.visualize_do(cell)
+    ActionController.refresh_astar_movement()
 
     # transition back to default action
     actions.transition_to_state(actions.initial_state)
+    actions.active_state.refresh_cells()
+
+    if action_name != "EndTurn" and name == "Player":
+        actions.active_state.visualize_cells()
+        actions.active_state.visualize_do({
+            "cell": ActionController.tile_map_action.world_to_map(owner.get_global_mouse_position())
+        })

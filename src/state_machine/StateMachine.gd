@@ -18,7 +18,7 @@ func _ready() -> void:
     assert(!initial_state.is_empty(), "initial_state is not defined")
 
     transition_to_state(initial_state)
-    
+
 
 func _process(delta: float) -> void:
     active_state.process(delta)
@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
     active_state.physics_process(delta)
-    
+
 
 func _unhandled_input(event: InputEvent) -> void:
     active_state.unhandled_input(event)

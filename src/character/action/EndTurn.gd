@@ -1,5 +1,5 @@
 extends Action
 
 
-func do(cell: Vector2) -> void:
+func do(context: Dictionary) -> void:
     owner.end_turn()

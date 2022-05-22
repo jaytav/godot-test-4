@@ -1,6 +1,7 @@
 class_name Action
 extends State
 
+export var manual: bool
 export var tile_map_modulate: Color
 export var tile_map_secondary_modulate: Color
 export var cost: int
@@ -10,11 +11,11 @@ var cells: Array
 onready var character_action_points: Stat = owner.get_node("Stats/ActionPoints")
 
 
-func do(cell: Vector2) -> void:
+func do(context: Dictionary) -> void:
     pass
 
 
-func cost(cell: Vector2) -> int:
+func cost(context: Dictionary) -> int:
     return cost
 
 
@@ -22,7 +23,7 @@ func refresh_cells() -> void:
     pass
 
 
-func visualize_do(cell: Vector2) -> void:
+func visualize_do(context: Dictionary) -> void:
     pass
 
 

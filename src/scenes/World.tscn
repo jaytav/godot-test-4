@@ -86,7 +86,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="Characters" instance=ExtResource( 1 )]
-position = Vector2( 320, 256 )
+position = Vector2( 448, 192 )
 
 [node name="EndTurnEnemy" parent="Characters" instance=ExtResource( 4 )]
 position = Vector2( 512, 224 )

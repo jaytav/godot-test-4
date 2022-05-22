@@ -10,7 +10,7 @@ func run() -> void:
     for character in characters:
         character.connect("action_done", self, "_on_active_character_action_done")
         pass
-    
+
     start_next_turn()
 
 
