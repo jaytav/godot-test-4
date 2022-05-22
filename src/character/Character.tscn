@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/character/Character.gd" type="Script" id=1]
 [ext_resource path="res://src/state_machine/StateMachine.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://src/character/status_effects/ReplenishBoundStat.gd" type="Script" id=10]
 [ext_resource path="res://src/character/action/Die.gd" type="Script" id=11]
 [ext_resource path="res://src/character/action/TakeDamage.gd" type="Script" id=12]
+[ext_resource path="res://src/character/gui/HealthBar.gd" type="Script" id=13]
+[ext_resource path="res://assets/textures/blank.png" type="Texture" id=14]
 
 [node name="Character" type="Node2D"]
 script = ExtResource( 1 )
@@ -65,3 +67,29 @@ stat_path = NodePath("../../Stats/ActionPoints")
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -32 )
 texture = ExtResource( 5 )
+
+[node name="GUI" type="Control" parent="."]
+margin_left = -40.0
+margin_top = -64.0
+margin_right = 40.0
+margin_bottom = 24.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="GUI"]
+margin_top = -16.0
+margin_right = 80.0
+margin_bottom = -2.0
+mouse_filter = 2
+value = 66.0
+texture_under = ExtResource( 14 )
+texture_progress = ExtResource( 14 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.960784, 0.435294, 0.435294, 1 )
+nine_patch_stretch = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

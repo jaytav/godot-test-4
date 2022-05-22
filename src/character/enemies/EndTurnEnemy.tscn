@@ -4,8 +4,10 @@
 [ext_resource path="res://src/character/states/DoAction.gd" type="Script" id=2]
 
 [node name="EndTurnEnemy" instance=ExtResource( 1 )]
-modulate = Color( 0.819608, 0.709804, 1, 1 )
 
 [node name="Active" parent="States" index="1"]
 script = ExtResource( 2 )
 action_path = NodePath("../../Actions/EndTurn")
+
+[node name="Sprite" parent="." index="4"]
+modulate = Color( 0.819608, 0.709804, 1, 1 )
