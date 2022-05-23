@@ -6,6 +6,9 @@
 
 [node name="Player" instance=ExtResource( 1 )]
 
+[node name="HealthPoints" parent="Stats" index="1"]
+max_value = 5
+
 [node name="Active" parent="States" index="1"]
 script = ExtResource( 2 )
 
@@ -19,3 +22,10 @@ damage = 2
 
 [node name="Sprite" parent="." index="4"]
 modulate = Color( 0.635294, 0.854902, 1, 1 )
+
+[node name="HealthBarBG" parent="GUI" index="0"]
+mouse_filter = 2
+
+[node name="HealthBar" parent="GUI" index="1"]
+mouse_filter = 2
+health_point_modulate = Color( 0.670588, 0.882353, 1, 1 )
