@@ -7,3 +7,4 @@ func _ready():
     NodeController.add(get_node("World/TileMaps"))
     NodeController.add(get_node("World/Camera2D"))
     ActionController.run()
+    TurnController.run()
