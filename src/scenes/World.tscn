@@ -44,7 +44,15 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 304 )
+rotating = true
 current = true
+limit_left = -50
+limit_top = -50
+limit_right = 1100
+limit_bottom = 675
+limit_smoothed = true
+smoothing_enabled = true
+editor_draw_limits = true
 
 [node name="TileMaps" type="Node2D" parent="."]
 __meta__ = {
@@ -86,7 +94,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="Characters" instance=ExtResource( 1 )]
-position = Vector2( 448, 192 )
+position = Vector2( 512, 288 )
 
 [node name="EndTurnEnemy" parent="Characters" instance=ExtResource( 4 )]
-position = Vector2( 512, 224 )
+position = Vector2( 576, 320 )
