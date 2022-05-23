@@ -32,11 +32,17 @@ func do_action(action_name: String, context: Dictionary = {}) -> void:
 
     actions.transition_to_state(action_name)
     actions.active_state.do(context)
+
     action.character_action_points.value -= action_cost
     emit_signal("action_done", self, actions.active_state)
 
     ActionController.tile_map_action.clear()
     ActionController.tile_map_action_secondary.clear()
+
+    # timeout after doing action to wait for things to change before continuing
+    # maybe actions should give information on how long it takes (animations and other)
+    yield(get_tree().create_timer(0.1), "timeout")
+
     ActionController.refresh_astar_movement()
 
     # transition back to default action

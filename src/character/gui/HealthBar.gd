@@ -1,3 +1,4 @@
+class_name HealthBar
 extends GridContainer
 
 export var health_point_modulate: Color
@@ -22,4 +23,3 @@ func _on_character_health_points_updated(from_value: int, to_value: int) -> void
 
     for i in range(from_value - to_value):
         remove_child(health_points[i])
-

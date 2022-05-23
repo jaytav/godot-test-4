@@ -1,5 +1,28 @@
+class_name HealthPoint
 extends TextureRect
 
-func destroy() -> void:
-    print("destroying hp")
-    queue_free()
+onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
+func breath() -> void:
+    MouseController.connect("cell_clicked", self, "_on_Mouse_Controller_cell_clicked")
+    MouseController.connect("cell_updated", self, "_on_Mouse_Controller_cell_updated")
+    animation_player.play("Breath")
+
+
+func _on_Mouse_Controller_cell_clicked(cell: Vector2) -> void:
+    MouseController.disconnect("cell_clicked", self, "_on_Mouse_Controller_cell_clicked")
+    MouseController.disconnect("cell_updated", self, "_on_Mouse_Controller_cell_updated")
+    animation_player.stop()
+
+    if get_parent():
+        modulate = get_parent().health_point_modulate
+
+
+func _on_Mouse_Controller_cell_updated(from_cell: Vector2, to_cell: Vector2) -> void:
+    MouseController.disconnect("cell_clicked", self, "_on_Mouse_Controller_cell_clicked")
+    MouseController.disconnect("cell_updated", self, "_on_Mouse_Controller_cell_updated")
+    animation_player.stop()
+
+    if get_parent():
+        modulate = get_parent().health_point_modulate

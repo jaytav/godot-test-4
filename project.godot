@@ -29,6 +29,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/character/Character.gd"
 }, {
+"base": "GridContainer",
+"class": "HealthBar",
+"language": "GDScript",
+"path": "res://src/character/gui/HealthBar.gd"
+}, {
+"base": "TextureRect",
+"class": "HealthPoint",
+"language": "GDScript",
+"path": "res://src/character/gui/HealthPoint.gd"
+}, {
 "base": "Node",
 "class": "Stat",
 "language": "GDScript",
@@ -54,6 +64,8 @@ _global_script_class_icons={
 "Active": "",
 "Attack": "",
 "Character": "",
+"HealthBar": "",
+"HealthPoint": "",
 "Stat": "",
 "State": "",
 "StateMachine": "",
@@ -72,6 +84,7 @@ NodeController="*res://src/autoload/NodeController.gd"
 TurnController="*res://src/autoload/TurnController.gd"
 ActionController="*res://src/autoload/ActionController.gd"
 CameraController="*res://src/autoload/CameraController.gd"
+MouseController="*res://src/autoload/MouseController.gd"
 
 [display]
 
