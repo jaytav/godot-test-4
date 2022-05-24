@@ -5,6 +5,7 @@ export var manual: bool
 export var tile_map_modulate: Color
 export var tile_map_secondary_modulate: Color
 export var cost: int
+export var texture: Texture
 
 var cells: Array
 
@@ -33,3 +34,13 @@ func visualize_cells() -> void:
 
     for cell in cells:
         ActionController.tile_map_action.set_cellv(cell, 0)
+
+
+func set_active() -> void:
+    state_machine.transition_to_state(name)
+
+    refresh_cells()
+    visualize_cells()
+    visualize_do({
+        "cell": MouseController.current_cell
+    })

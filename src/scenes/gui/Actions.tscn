@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/gui/Actions.gd" type="Script" id=1]
+
+[node name="Actions" type="Control"]
+margin_top = 512.0
+margin_right = 1024.0
+margin_bottom = 576.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActionTiles" type="HBoxContainer" parent="."]
+margin_left = 472.0
+margin_top = -32.0
+margin_right = 552.0
+margin_bottom = 48.0
+grow_horizontal = 2
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}

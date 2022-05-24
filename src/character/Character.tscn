@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/character/Character.gd" type="Script" id=1]
 [ext_resource path="res://src/state_machine/StateMachine.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://src/character/status_effects/ReplenishBoundStat.gd" type="Script" id=10]
 [ext_resource path="res://src/character/action/Die.gd" type="Script" id=11]
 [ext_resource path="res://src/character/action/TakeDamage.gd" type="Script" id=12]
+[ext_resource path="res://assets/textures/move.png" type="Texture" id=13]
+[ext_resource path="res://assets/textures/blank.png" type="Texture" id=14]
 [ext_resource path="res://src/character/gui/HealthBar.gd" type="Script" id=15]
 
 [node name="Character" type="Node2D"]
@@ -43,18 +45,22 @@ initial_state = NodePath("Move")
 
 [node name="EndTurn" type="Node" parent="Actions"]
 script = ExtResource( 8 )
+texture = ExtResource( 14 )
 
 [node name="TakeDamage" type="Node" parent="Actions"]
 script = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="Die" type="Node" parent="Actions"]
 script = ExtResource( 11 )
+texture = ExtResource( 14 )
 
 [node name="Move" type="Node" parent="Actions"]
 script = ExtResource( 6 )
 manual = true
 tile_map_modulate = Color( 0.87451, 1, 0.627451, 1 )
 tile_map_secondary_modulate = Color( 0.478431, 0.670588, 0.407843, 1 )
+texture = ExtResource( 13 )
 
 [node name="StatusEffects" type="Node" parent="."]
 script = ExtResource( 9 )

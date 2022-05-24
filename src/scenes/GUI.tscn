@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/gui/Actions.tscn" type="PackedScene" id=1]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="Actions" parent="." instance=ExtResource( 1 )]
+margin_top = 536.0
+margin_bottom = 600.0
