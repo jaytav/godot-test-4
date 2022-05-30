@@ -5,7 +5,7 @@
 [ext_resource path="res://src/character/action/attacks/RelativeAttack.gd" type="Script" id=3]
 [ext_resource path="res://assets/textures/attack.png" type="Texture" id=4]
 [ext_resource path="res://src/character/action/Jump.gd" type="Script" id=5]
-[ext_resource path="res://assets/textures/blank.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/move.png" type="Texture" id=6]
 
 [node name="Player" instance=ExtResource( 1 )]
 

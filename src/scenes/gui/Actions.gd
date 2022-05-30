@@ -12,6 +12,18 @@ func _ready() -> void:
         character.connect("turn_started", self, "_on_character_turn_started")
 
 
+func _unhandled_input(event: InputEvent) -> void:
+    if event.is_action_pressed("number"):
+        var index: int = int(event.as_text()) - 1
+        var action_tile = action_tiles.get_children().pop_at(index)
+
+        if index < 0 or action_tile == null:
+            return
+
+        action_tile.action.set_active()
+        
+    
+    
 func _on_character_turn_started(character: Character) -> void:
     for action_tile in action_tiles.get_children():
         action_tiles.remove_child(action_tile)
